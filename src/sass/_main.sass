@@ -1,0 +1,180 @@
+// \:root
+//   --mainColor: #61b8ff
+//   --hoverColor: #2b9fff
+//   --transition: all .5s ease
+.container
+	width: 1000px
+	padding: 50px
+	margin: 100px auto
+.main__tabs
+	display: flex
+	margin: 0 auto
+	align-items: center
+	justify-content: center
+	margin-bottom: 50px
+.main__tabs a
+	padding: 10px 15px
+	text-decoration: none
+	border: 1px solid $main-color
+	border-radius: 5px;
+	color: $main-color
+	transition: $transition
+	&.is-active
+		background-color: $main-color
+		color: #fff
+	&:hover
+		background-color: $hover-color
+.main__tabs a+a
+	margin-left: 15px
+.slides-img
+	width: 100%
+	display: block
+	height: auto
+.slides-img.only-modal
+	display: none
+.slides.js-modal .slides-img
+	width: 50%
+.slides.js-modal .slides-img.only-modal
+	display: block
+.slides
+	position: relative
+.slider
+	position: relative
+
+.tabs-content
+	position: relative
+.tab-content
+	width: 100%
+	position: absolute
+	opacity: 0
+#slider2.tab-content
+	visibility: hidden
+#slider2.is-visible.tab-content
+	visibility: visible
+.tab-content.is-visible
+	position: static
+	opacity: 1
+.slides
+	margin: 0 10px
+	border: 1px solid $main-color
+	border-radius: 5px
+	overflow: hidden
+.slides.js-modal
+	display: flex
+	flex-direction: row-reverse
+	border: none
+.slides-body
+	padding: 15px
+.slides.js-modal .slides-body
+	width: 50%
+.slides-body>:not(:last-child)
+	margin-bottom: 15px
+.slides-title
+	font-size: 24px
+.slides-text.only-modal
+	display: none
+.slides.js-modal .slides-text.only-modal
+	display: block
+.slides.js-modal .slides-text.only-tab
+	display: none
+.slides-meta
+	color: #cccccc
+	font-size: 12px
+.slides-more
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 20px
+	background: $main-color
+	text-decoration: none
+	text-transform: uppercase
+	font-size: 24px
+	font-weight: bold
+	color: #fff
+	&:hover
+		background: $hover-color
+.slides.js-modal .slides-more
+	display: none
+	//////////////////////////ARROWS////////////////////
+.slick-arrow
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	background: $main-color
+	width: 40px
+	height: 40px
+	border-radius: 5px
+	display: flex
+	align-items: center
+	justify-content: center
+	font-size: 0
+	z-index: 1
+	&:before
+		content: ''
+		width: 15px
+		height: 15px
+		border: 10px solid transparent
+
+.slick-prev
+	right: calc(100% + 15px)
+	&:before
+		border-right: 10px solid #fff
+		transform: translateX(-25%)
+
+.slick-next
+	left: calc(100% + 15px)
+	&:before
+		border-left: 10px solid #fff
+		transform: translateX(25%)
+
+.modal-slider
+	.slick-prev
+		right: 100%
+	.slick-next
+		left: 100%
+//modal//
+.modal-wrap
+	position: fixed
+	left: 0
+	top: 0
+	height: 100%
+	width: 100%
+	background: rgba(0,0,0,.7)
+	display: none
+	align-items: center
+	justify-content: center
+	z-index: 1000
+.modal-wrap.is-visible
+	display: flex
+.modal
+	position: relative
+	width: 800px
+	padding: 15px
+	background: #fff
+	border-radius: 5px
+	transform: translateY(-50%)
+	transition: $transition
+.modal-wrap.modal-wrap.is-visible .modal
+	transform: translateY(0);
+.modal-close
+	color: #ffffff
+	background: 0
+	font-size: 24px
+	position: absolute
+	right: -30px
+	top: -30px
+	transition: $transition
+.modal-close:hover
+	color: $main-color
+.modal-body
+	position: relative
+
+.modal-slides-counter
+	position: absolute
+	right: 10px
+	bottom: 10px
+	display: inline-flex
+	padding: 5px
+	color: #ffffff
+	border-radius: 5px
+	background: $main-color
